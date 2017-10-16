@@ -1,7 +1,7 @@
 FROM jenkinsci/jnlp-slave
 #FROM bitriseio/docker-bitrise-base-alpha:latest
 
-ENV ANDROID_HOME /var/lib/jenkins/tools/android-sdk
+ENV ANDROID_HOME /opt/android-sdk-linux
 
 # ------------------------------------------------------
 # --- Install required tools
