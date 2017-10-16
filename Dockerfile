@@ -89,10 +89,10 @@ RUN echo y | ${ANDROID_HOME}/tools/bin/sdkmanager --update | grep done
 # --- Install Gradle from PPA
 
 # Gradle PPA
-RUN apt-get update && \
-    apt-get -y install gradle && \
-    gradle -v && \
-    rm -rf /var/lib/apt/lists/*
+# RUN apt-get update && \
+#     apt-get -y install gradle && \
+#     gradle -v && \
+#     rm -rf /var/lib/apt/lists/*
 
 # ------------------------------------------------------
 # --- Install Maven 3 from PPA
@@ -119,7 +119,7 @@ RUN apt-get update && \
 #     rm -rf /var/lib/apt/lists/*
 
 # added by Ackee
-RUN curl https://get.docker.com | bash
+# RUN curl https://get.docker.com | bash
 
 # fix HOME root env variables for android emulator plugin...
 # WORKDIR /root
