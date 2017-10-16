@@ -1,7 +1,8 @@
 FROM jenkinsci/jnlp-slave
 #FROM bitriseio/docker-bitrise-base-alpha:latest
 
-ENV ANDROID_HOME /var/lib/jenkins/tools/android-sdk #mayankkapoor: Need this as android Jenkinsfile uses this directory. If you need to change this, change it in Android client Jenkinsfile also.
+#mayankkapoor: Need to set ANDROID_HOME as Android Jenkinsfile uses this directory. If you need to change this, change it in Android client Jenkinsfile also.
+ENV ANDROID_HOME /var/lib/jenkins/tools/android-sdk
 
 # ------------------------------------------------------
 # --- Install required tools
