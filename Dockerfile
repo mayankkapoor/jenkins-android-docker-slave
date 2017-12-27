@@ -22,7 +22,7 @@ RUN cd /opt && wget -q https://dl.google.com/android/repository/sdk-tools-linux-
     rm -f android-sdk-tools.zip
 
 # ndk-bundle
-RUN cd /opt/android-sdk-linux/ && wget -q https://dl.google.com/android/repository/android-ndk-r15c-linux-x86_64.zip -O ndk-bundle.zip && \
+RUN cd $ANDROID_HOME && wget -q https://dl.google.com/android/repository/android-ndk-r15c-linux-x86_64.zip -O ndk-bundle.zip && \
     unzip -q ndk-bundle.zip && mv android-ndk-r15c ndk-bundle && chown -R jenkins:jenkins ndk-bundle/
 
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
@@ -39,10 +39,10 @@ RUN sdkmanager "platform-tools"
 # Emulator
 # RUN sdkmanager "emulator"
 # For now we'll keep using 26.1.2 ; 26.1.3 had some booting issues...
-RUN cd /opt \
- && wget https://dl.google.com/android/repository/emulator-linux-4077558.zip -O emulator.zip \
- && unzip -q emulator.zip -d ${ANDROID_HOME} \
- && rm emulator.zip
+# RUN cd /opt \
+#  && wget https://dl.google.com/android/repository/emulator-linux-4077558.zip -O emulator.zip \
+#  && unzip -q emulator.zip -d ${ANDROID_HOME} \
+#  && rm emulator.zip
 
 # Please keep all sections in descending order!
 RUN yes | sdkmanager \
