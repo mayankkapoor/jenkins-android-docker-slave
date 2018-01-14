@@ -3,6 +3,8 @@ FROM jenkinsci/jnlp-slave
 
 #mayankkapoor: Need to set ANDROID_HOME as Android Jenkinsfile uses this directory. If you need to change this, change it in Android client Jenkinsfile also.
 ENV ANDROID_HOME /var/lib/jenkins/tools/android-sdk
+ENV http_proxy http://10.144.106.132:8678/
+ENV https_proxy http://10.144.106.132:8678/
 
 # ------------------------------------------------------
 # --- Install required tools
